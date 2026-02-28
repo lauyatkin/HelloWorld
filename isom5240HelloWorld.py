@@ -28,7 +28,7 @@ def output(output_msg):
     st.write(f"Age range: {age_predictions[0]['label']}")
     
     st.write("Done")
-    return 
+    return output_msg
     
 def main():
     # Streamlit UI
