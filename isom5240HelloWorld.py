@@ -18,13 +18,8 @@ def ageClassifier():
     age_predictions = age_classifier(image_name)
 
     return age_predictions
-    
-def main():
-    # Streamlit UI
-    st.title("Title: Age Classification using ViT")
 
-    age_predictions = ageClassifier()
-
+def output(output_msg):
     st.write(age_predictions)
     age_predictions = sorted(age_predictions, key=lambda x: x['score'], reverse=True)
     
@@ -33,6 +28,14 @@ def main():
     st.write(f"Age range: {age_predictions[0]['label']}")
     
     st.write("Done")
+    return 
+    
+def main():
+    # Streamlit UI
+    st.title("Title: Age Classification using ViT")
+
+    age_predictions = ageClassifier()
+    output_msg = output()
 
 # main part
 if __name__ == "__main__":
