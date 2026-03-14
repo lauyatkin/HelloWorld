@@ -21,7 +21,7 @@ inputs = tokenizer(text,
 
 outputs = model2(**inputs)
 predictions = torch.nn.functional.softmax(outputs.logits, dim=-1)
-predictions = predictions.detach().numpy()
+predictions = predictions.cpu().detach().numpy()
 
 # Get the index of the largest output value
 max_index = np.argmax(predictions)
