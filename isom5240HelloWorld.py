@@ -5,6 +5,7 @@ from transformers import AutoTokenizer
 import torch
 import numpy as np
 
+st.header("Testing App")
 # Testing with the saved model
 model2 = AutoModelForSequenceClassification.from_pretrained("lauyatkin/20260307",
                                                             num_labels=5)
@@ -20,7 +21,7 @@ inputs = tokenizer(text,
 
 outputs = model2(**inputs)
 predictions = torch.nn.functional.softmax(outputs.logits, dim=-1)
-predictions = predictions.cpu().detach().numpy()
+predictions = predictions.detach().numpy()
 
 # Get the index of the largest output value
 max_index = np.argmax(predictions)
