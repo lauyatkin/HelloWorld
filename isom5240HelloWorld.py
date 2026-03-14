@@ -1,3 +1,5 @@
+import streamlit as st
+
 from transformers import AutoModelForSequenceClassification
 from transformers import AutoTokenizer
 import torch
