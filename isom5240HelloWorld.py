@@ -13,13 +13,13 @@ try:
     import transformers
     st.write("transformers.version:", transformers.version)
     st.write("transformers file:", inspect.getsourcefile(transformers))
-try:
-    importlib.invalidate_caches()
-    import transformers.cache_utils as _cu
-    st.write("cache_utils file:", inspect.getsourcefile(_cu))
-    st.write("has SlidingWindowCache:", hasattr(_cu, "SlidingWindowCache"))
-except Exception as e:
-st.write("cache_utils import error:", str(e))
+    try:
+        importlib.invalidate_caches()
+        import transformers.cache_utils as _cu
+        st.write("cache_utils file:", inspect.getsourcefile(_cu))
+        st.write("has SlidingWindowCache:", hasattr(_cu, "SlidingWindowCache"))
+    except Exception as e:
+    st.write("cache_utils import error:", str(e))
 except Exception as e:
 st.write("transformers import error:", str(e))
 
