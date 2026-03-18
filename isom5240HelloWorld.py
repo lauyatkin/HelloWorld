@@ -5,14 +5,15 @@ import streamlit as st
 
 from transformers import pipeline
 
-import sys, inspect
+import streamlit as st
+import sys, inspect, importlib
+
 st.write("python:", sys.version)
 try:
 import transformers
 st.write("transformers.version:", transformers.version)
 st.write("transformers file:", inspect.getsourcefile(transformers))
 try:
-importlib = import("importlib")
 importlib.invalidate_caches()
 import transformers.cache_utils as _cu
 st.write("cache_utils file:", inspect.getsourcefile(_cu))
