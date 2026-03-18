@@ -17,9 +17,8 @@ def main():
         st.write(f"Sentiment: {sentiment}")
         st.write(f"Confidence: {confidence:.2f}")
 
-        replyMsg_result = replyMsg_pipeline(f"Generate a polite reply to apologize in corresponding language for below message: '{user_input}'")
-        st.write(replyMsg_result)
-        st.write(f"Reply Message: {confidence:.2f}")
+        replyMsg_result = replyMsg_pipeline(f"Generate a polite reply to apologize in the same language language for below message: '{user_input}'")
+        st.write(f"Suggested Reply Message: {replyMsg_result[0]['generated_text']}")
 
 if __name__ == "__main__":
     main()
