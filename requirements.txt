@@ -1,4 +1,6 @@
-streamlit
-transformers<5.0.0
+transformers>=4.35.0
+tokenizers
+accelerate
+peft
+safetensors
 torch
-Pillow
