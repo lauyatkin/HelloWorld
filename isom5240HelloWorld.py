@@ -21,5 +21,5 @@ def main():
         st.write(replyMsg_result)
         st.write(f"Reply Message: {confidence:.2f}")
 
-if name == "main":
+if __name__ == "__main__":
     main()
