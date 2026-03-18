@@ -1,3 +1,6 @@
+pip install -U pip
+pip install -U "transformers>=4.35.0" tokenizers accelerate peft safetensors
+
 import streamlit as st
 
 from transformers import pipeline
