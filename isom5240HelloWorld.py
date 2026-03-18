@@ -19,9 +19,9 @@ try:
         st.write("cache_utils file:", inspect.getsourcefile(_cu))
         st.write("has SlidingWindowCache:", hasattr(_cu, "SlidingWindowCache"))
     except Exception as e:
-    st.write("cache_utils import error:", str(e))
+        st.write("cache_utils import error:", str(e))
 except Exception as e:
-st.write("transformers import error:", str(e))
+    st.write("transformers import error:", str(e))
 
 
 pipe = pipeline("text-generation", model="microsoft/Phi-4-mini-instruct", trust_remote_code=True)
